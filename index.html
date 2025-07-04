@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DailySkeleton</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manufacturing+Consent&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <main>
+    <header>
+      <h1>DailySkeleton</h1>
+       <p id="day">day : <span id="dayNum"></span></p>
+      <p id="todayDate"></p>
+      <div class="quote-box">
+  <i class="quote-icon">“</i>
+  <p id="quoteText"></p>
+</div>
+    </header>
+
+    <section class="container">
+      <div class="asp_box">
+        <h2 class="neon-text">asp_professional</h2>
+        <img src="img/asp_professional.png" alt="Professional Aspect" />
+      </div>
+
+      <div class="asp_box">
+        <h2 class="neon-text">asp_health</h2>
+        <img src="img/asp_health.png" alt="Health Aspect" />
+      </div>
+
+      <div class="asp_box">
+        <h2 class="neon-text">asp_personal</h2>
+        <img src="img/asp_personal.png" alt="Personal Aspect" />
+      </div>
+
+      <div class="asp_box">
+        <h2 class="neon-text">asp_financial</h2>
+        <img src="img/asp_financial.png" alt="Financial Aspect" />
+      </div>
+    </section>
+    <div class="progress-section">
+      <h2 class="neon-text">Daily progress</h2>
+<div class="progress-label">asp_professional</div>
+  <div class="progress">
+    <div class="progress-bar" data-value="65" data-aspect="asp_professional">65%</div>
+    </div>
+    <div class="progress-label">asp_health</div>
+  <div class="progress">
+    <div class="progress-bar" data-value="25" data-aspect="asp_health">25%</div>
+    </div>
+    <div class="progress-label">asp_personal</div>
+  <div class="progress">
+    <div class="progress-bar" data-value="5" data-aspect="asp_personal">5%</div>
+    </div>
+      <div class="progress-label">asp_financial</div>
+  <div class="progress">
+    <div class="progress-bar" data-value="95" data-aspect="asp_financial">95%</div>
+    </div>
+    </div>
+    <div>
+      <div class="chart-section">
+  <h2 class="neon-text">Progress Comparison (Today vs Yesterday)</h2>
+  <canvas id="progressChart" width="400" height="200"></canvas>
+</div>
+</div>
+<div class="task-input-section">
+  <h2 class="neon-text">Add a New Task</h2>
+  <form id="taskForm">
+    <input type="text" id="taskInput" placeholder="Write a task..." required />
+    <select id="aspectSelect">
+      <option value="asp_professional">Professional</option>
+      <option value="asp_health">Health</option>
+      <option value="asp_personal">Personal</option>
+      <option value="asp_financial">Financial</option>
+    </select>
+    <button type="submit">Add Task</button>
+  </form>
+</div>
+
+  </main>
+
+  <div id="taskPopup" class="popup">
+  <div class="popup-content">
+    <span id="closePopup" class="close">&times;</span>
+    <h3 id="popupTitle"></h3>
+    <div id="taskList"></div>
+  </div>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
